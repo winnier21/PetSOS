@@ -1,16 +1,26 @@
 # Project Title
 
+PetSOS
+
 ## Overview
 
-What is your app? Brief description in a couple of sentences.
+A mobile solution to pet first aid emergencies. By walking the users through the correct procedures on how to respond to injuries or accidents that happened to their pets, I want to give users agency when it comes to the survival outcome of their pet's emergency care needs.
 
 ### Problem
 
-Why is your app needed? Background information around any pain points or other reasons.
+Most pet owners love their pets like family members. However, compared to other human family members, most owners don’t invest the same amount of care and energy when it comes to knowing how save their pets. Its the unfortunate truth that most pet owners are not prepared for many common pet emergencies.
+
+With these statistics, the trend is that pet owners in North American society are not prepared to provide emergency care to their pet if a life threatening situation were to happen.
 
 ### User Profile
 
 Who will use your app? How will they use it? Any special considerations that your app must take into account.
+
+It is a solution to bridge a knowledge gap that exist in pet emergency first aid. This app tries to accomplish three things:
+
+1. Automatically prepare a list of nearby veterinarians and calls each until answered.
+2. Guides pet owners with accurate first aid instruction and procedures while waiting for veterinarian response.
+3. Navigate the user towards the clinic that agreed to see the user.
 
 ### Features
 
@@ -36,7 +46,7 @@ Provide visuals of your app's screens. You can use tools like Figma or pictures 
 
 ### Data
 
-Describe your data and the relationships between them. You can show this visually using diagrams, or write it out. 
+Describe your data and the relationships between them. You can show this visually using diagrams, or write it out.
 
 ### Endpoints
 
