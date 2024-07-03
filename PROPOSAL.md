@@ -48,14 +48,17 @@ OpenAI ChatGPT API: For processing natural language inputs and providing emergen
 ### Mockups
 
 ### Home Page with an emergency button directly calling to the closest vet clinic and if the call fails, it will call the following one automatically
-![](phone_mock_up.png)
+![image](https://github.com/winnier21/chelsea-hsieh-capstone/assets/169178572/2af68315-5f79-4b82-b50f-1d994c5ba305)
+
 ### First aid guide by choosing different pet's sypstoms 
-![](phone_mock_up_2.png)
-![](phone_mock_up_3.png)
+![image](https://github.com/winnier21/chelsea-hsieh-capstone/assets/169178572/3d30da00-1546-4340-9f8e-552c96e7bf95)
+![image](https://github.com/winnier21/chelsea-hsieh-capstone/assets/169178572/11e59a5e-3e24-46c4-a37b-e82c57359588)
+
 ### Navigation page 
+![image](https://github.com/winnier21/chelsea-hsieh-capstone/assets/169178572/923c4e2c-7874-4beb-bc6e-4ce551940083)
 
 ### Chat Page for pet owners who do not how to nevigate what happen to their pets
-![]()
+![image](https://github.com/winnier21/chelsea-hsieh-capstone/assets/169178572/0a6cefde-a54c-4e4f-aaeb-e8d8e970f50c)
 
 
 ### Data
