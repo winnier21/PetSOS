@@ -53,7 +53,8 @@ OpenAI ChatGPT API: For processing natural language inputs and providing emergen
 ### First aid guide by choosing different pet's sypstoms 
 ![image](https://github.com/winnier21/chelsea-hsieh-capstone/assets/169178572/5a0f2366-3453-4d2f-90ce-cf3abe4b9ea4)
 
-![](phone_mock_up_3.png)
+![image](https://github.com/winnier21/chelsea-hsieh-capstone/assets/169178572/753b8183-c5e0-4b53-b338-f887ee75e44e)
+
 ### Navigation page 
 
 ### Chat Page for pet owners who do not how to nevigate what happen to their pets
