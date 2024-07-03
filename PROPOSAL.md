@@ -47,7 +47,16 @@ OpenAI ChatGPT API: For processing natural language inputs and providing emergen
 
 ### Mockups
 
-Provide visuals of your app's screens. You can use tools like Figma or pictures of hand-drawn sketches.
+### Home Page with an emergency button directly calling to the closest vet clinic and if the call fails, it will call the following one automatically
+![](phone_mock_up.png)
+### First aid guide by choosing different pet's sypstoms 
+![](phone_mock_up_2.png)
+![](phone_mock_up_3.png)
+### Navigation page 
+
+### Chat Page for pet owners who do not how to nevigate what happen to their pets
+![]()
+
 
 ### Data
 
