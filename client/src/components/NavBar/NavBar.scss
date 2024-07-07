@@ -1,0 +1,58 @@
+@use "../../styles/globals" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/typography" as *;
+@use "../../styles/variables" as *;
+
+.navbar {
+  position: fixed;
+  height:5rem;
+  left:1rem;
+  right: 1rem;
+  margin-bottom: 1rem;
+  bottom: 0;
+  background-color: $white;
+  border-radius: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: $grey;
+
+  &__section {
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  &__item {
+    margin-right: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+      background-color: $blue;
+      border-radius: 10rem;
+      padding:0.5rem;
+      color: $white;
+      font-weight: 900;
+      margin-right: 1rem;
+    }
+  }
+  &__call {
+    width: 3rem;
+    height: 3rem;
+    padding: 0.5rem;
+    background-color: $red;
+    border-radius: 100%;
+  }
+  &__navigation {
+    width: 3rem;
+    height: 3rem;
+    padding: 0.5rem;
+    background-color: $red;
+    border-radius: 100%;
+  }
+  &__text {
+    padding: 0.5rem;
+  }
+}
