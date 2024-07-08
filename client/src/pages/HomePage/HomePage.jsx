@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { getChatGPTResponse } from '../../utils/chatgptApi'; // Ensure you have this function created
+import PageTop from '../../components/PageTop/PageTop';
+import "./HomePage.scss";
 
 function HomePage() {
   const [prompt, setPrompt] = useState('');
@@ -13,9 +15,10 @@ function HomePage() {
 
   return (
     <div>
+        <PageTop />
       <h1>Welcome to Home Page</h1>
       <form onSubmit={handleSubmit}>
-        <textarea
+        <textarea className='homepage-textarea'
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
           rows="4"
