@@ -1,4 +1,4 @@
-const OPENAI_API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
+const OPENAI_API_KEY = "sk-proj-StKfw4flMGdXtAnlFIAFT3BlbkFJgGN5gbQgcW9mr3sfL5VR";
 const OPENAI_API_URL = "https://api.openai.com/v1/engines/davinci-codex/completions";
 
 export const getChatGPTResponse = async (prompt) => {
