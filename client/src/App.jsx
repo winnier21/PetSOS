@@ -1,6 +1,5 @@
 import NavBar from "../../client/src/components/NavBar/NavBar";
 import "./App.scss";
-
 import PageTop from "../../client/src/components/PageTop/PageTop";
 
 function App() {
