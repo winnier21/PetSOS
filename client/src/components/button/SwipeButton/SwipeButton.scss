@@ -3,32 +3,26 @@
 @use "../../../styles/typography" as *;
 @use "../../../styles/variables" as *;
 
+.swipe {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
 
-.swipe-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right:1rem;
-    margin-left: 1rem;
-
-}
-.swipe-button {
-    margin-left:0.8rem;
-    position: absolute;
-    left: 0;
-    top: 9.5%;
-    transform: translate(-50%, -50%);
+  &-button {
+    margin-left: 0.8rem;
+    position: relatvie;
+    transform: translate(-50%);
     width: 3.8rem;
     height: 3.8rem;
-    background-color: $white;
+    background-color: $light-red;
     border-radius: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    z-index: 2;
+    z-index: 3;
     transition: transform 0.1s;
-  
+
     .swipe-icon {
       background-color: $white;
       border-radius: 100%;
@@ -36,32 +30,33 @@
       width: 2.5rem;
     }
   }
-
-.swipe-bar {
-  position: relative;
-  width: 100%;
-  height: 3rem;
-  background-color: $red;
-  border-radius: 10rem;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  color: $white;
+  &-bar {
+    position: absolute;
+    width: auto;
+    height: 3rem;
+    background-color: $white;
+    border-radius: 10rem;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: $light-red;
+    z-index: 1;
+    padding-right: 4rem;
+  }
+  &-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: $red;
+    border-radius: 10rem;
+    z-index: 2;
+    transition: width 0.001s;
+  }
 }
-.swipe-overlay {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  background-color: $light-red;
-  border-radius: 10rem;
-  z-index: 1;
-  transition: width 0.1s;
-}
-
 
 h2 {
   margin-left: 6rem;
   position: relative;
-//   z-index: 2;
+  //   z-index: 2;
 }

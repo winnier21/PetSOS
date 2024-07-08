@@ -59,7 +59,7 @@ const SwipeButton = () => {
   };
 
   return (
-    <main className="swipe-container"
+    <main className="swipe"
       onMouseMove={handleMouseMove}
       onTouchMove={handleTouchMove}
       onMouseUp={handleMouseUp}

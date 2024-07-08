@@ -1,7 +1,7 @@
 import "./NavBar.scss";
 import call from "../../assets/icons/emergency_call.svg";
 import navigation from "../../assets/icons/navigation.svg";
-// import React from "react";
+
 
 function NavBar() {
   return (
