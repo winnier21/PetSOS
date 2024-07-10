@@ -1,24 +1,32 @@
 import { useState } from 'react';
-import { getChatGPTResponse } from '../../utils/chatgptApi'; // Ensure you have this function created
+import { getChatGPTResponse } from '../../utils/chatgptApi'; // Ensure this function is correctly imported
 import PageTop from '../../components/PageTop/PageTop';
 import "./HomePage.scss";
 
 function HomePage() {
   const [prompt, setPrompt] = useState('');
   const [response, setResponse] = useState('');
+  const [error, setError] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const apiResponse = await getChatGPTResponse(prompt);
-    setResponse(apiResponse);
+    setError(''); // Reset error state
+    try {
+      const apiResponse = await getChatGPTResponse(prompt);
+      setResponse(apiResponse);
+    } catch (error) {
+      setError('Failed to fetch response from API. Please try again.');
+      console.error("Error fetching ChatGPT response:", error);
+    }
   };
 
   return (
     <div>
-        <PageTop />
+      <PageTop />
       <h1>Welcome to Home Page</h1>
       <form onSubmit={handleSubmit}>
-        <textarea className='homepage-textarea'
+        <textarea
+          className='homepage-textarea'
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
           rows="4"
@@ -28,6 +36,7 @@ function HomePage() {
         <br />
         <button type="submit">Get Response</button>
       </form>
+      {error && <p className="error">{error}</p>}
       {response && (
         <div>
           <h2>Response from ChatGPT:</h2>

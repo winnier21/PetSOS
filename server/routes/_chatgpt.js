@@ -8,7 +8,7 @@ dotenv.config();  // Ensure this is at the top to load environment variables ear
 const router = Router();
 
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
-const OPENAI_API_URL = "https://api.openai.com/v1/engines/davinci-codex/completions";
+const OPENAI_API_URL = "https://api.openai.com/v1/completions";
 
 router.post('/getChatGPTResponse', async (req, res) => {
     const { prompt } = req.body;

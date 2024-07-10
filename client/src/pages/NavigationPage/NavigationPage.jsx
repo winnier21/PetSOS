@@ -19,18 +19,13 @@ function NavigationPage() {
   return (
     <div>
       <h1>Navigation</h1>
-      {mapUrl ? (
-        <iframe 
-          title="Map Viewer"  // Add a title attribute for accessibility
-          src={mapUrl}         // Use dynamic URL from state
-          width="100%" 
-          height="500px"       // Define a specific height or make it responsive
-          style={{ border: 'none' }} 
-          loading="lazy"
-        ></iframe>
-      ) : (
-        <p>Loading map...</p>  // Provide feedback while map URL is loading or if not available
-      )}
+      <iframe
+        title="google-map"
+        width="100%"
+        height="750"
+        src="https://storage.googleapis.com/maps-solutions-phrazvpkye/commutes/p9jf/commutes.html"
+        allowFullScreen
+      ></iframe>
     </div>
   );
 }
