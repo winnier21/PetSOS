@@ -10,7 +10,7 @@ app.use(cors({
     origin: 'http://localhost:5173'  // Adjust the origin according to your client's URL in production
   }));
 
-const PORT = process.env.PORT || 3030;
+const PORT = process.env.PORT || 8080;
 const BACKEND_URL = process.env.BACKEND_URL;
 
 app.use(express.json());
