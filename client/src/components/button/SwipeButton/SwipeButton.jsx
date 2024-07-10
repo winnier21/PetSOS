@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import "./SwipeButton.scss";
 import sosIcon from "../../../assets/icons/sos-icon.png";
 
@@ -6,13 +6,36 @@ const SwipeButton = () => {
   const [isSwiping, setIsSwiping] = useState(false);
   const [startX, setStartX] = useState(0);
   const [swipePosition, setSwipePosition] = useState(0);
+  const [clinics, setClinics] = useState([]);
   const swipeButtonRef = useRef(null);
+
+
+  useEffect(() => {
+    const fetchClinics = async () => {
+      try {
+        // Get current location
+        navigator.geolocation.getCurrentPosition(async (position) => {
+          const { latitude, longitude } = position.coords;
+          // Fetch nearby vet clinics
+          const response = await fetch(
+            `/api/navigation/getPlaces?latitude=${latitude}&longitude=${longitude}&radius=5000`
+          );
+          const data = await response.json();
+          setClinics(data.results);
+        });
+      } catch (error) {
+        console.error("Error fetching clinics:", error);
+      }
+    };
+
+    fetchClinics();
+  }, []);
 
   const handleMouseDown = (e) => {
     setIsSwiping(true);
     setStartX(e.clientX);
   };
-
+  
   const handleTouchStart = (e) => {
     setIsSwiping(true);
     setStartX(e.touches[0].clientX);
@@ -35,12 +58,25 @@ const SwipeButton = () => {
       }
     }
   };
+  const makeCall = (clinicIndex = 0) => {
+    if (clinics.length > 0 && clinicIndex < clinics.length) {
+      const phoneNumber = clinics[clinicIndex].formatted_phone_number;
+      if (phoneNumber) {
+        window.location.href = `tel:${phoneNumber}`;
+      } else {
+        // If the clinic has no phone number or the call fails, call the next one
+        makeCall(clinicIndex + 1);
+      }
+    } else {
+      alert("No more clinics to call.");
+    }
+  };
 
   const handleMouseUp = () => {
     if (isSwiping) {
       setIsSwiping(false);
       if (swipePosition > 180) {
-        window.location.href = "tel:+1234567890"; // Replace with your animal clinic's phone number
+        makeCall();
       } else {
         setSwipePosition(0);
       }
@@ -51,7 +87,7 @@ const SwipeButton = () => {
     if (isSwiping) {
       setIsSwiping(false);
       if (swipePosition > 180) {
-        window.location.href = "tel:+1234567890"; // Replace with your animal clinic's phone number
+        makeCall();
       } else {
         setSwipePosition(0);
       }

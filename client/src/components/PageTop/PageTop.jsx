@@ -11,7 +11,7 @@ function PageTop() {
       </section>
       <section className="pagetop-section">
         <h1>STEP 1</h1>
-        <h3>Stay Clam. Don't Wait, act now</h3>
+        <h3>Stay Clam. Do not Wait, Act now</h3>
         <SwipeButton />
       </section>
       <article className="pagetop-container">
