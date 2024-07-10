@@ -15,7 +15,9 @@
     "knex": "^3.1.0",
     "node-fetch": "^3.3.2",
     "nodemon": "^3.1.4",
-    "openai": "^4.52.4",
+    "openai": "^4.52.4"
+  },
+  "devDependencies": {
     "sass": "^1.77.7"
   }
 }
