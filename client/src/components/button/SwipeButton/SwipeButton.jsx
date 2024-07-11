@@ -15,16 +15,21 @@ const SwipeButton = () => {
         navigator.geolocation.getCurrentPosition(async (position) => {
           const { latitude, longitude } = position.coords;
           const response = await fetch(
-            `${import.meta.env.VITE_API_URL}/api/navigation/getPlaces?latitude=${latitude}&longitude=${longitude}&radius=5000`
+            `${
+              import.meta.env.VITE_API_URL
+            }/api/navigation/getPlaces?latitude=${latitude}&longitude=${longitude}&radius=5000`
           );
           const data = await response.json();
           console.log("Fetched clinics data:", data); // Debugging line
-          
+
           // Log each clinic's formatted phone number to check if it exists
           data.results.forEach((clinic, index) => {
-            console.log(`Clinic ${index + 1} Phone Number:`, clinic.formatted_phone_number);
+            console.log(
+              `Clinic ${index + 1} Phone Number:`,
+              clinic.formatted_phone_number
+            );
           });
-          
+
           setClinics(data.results);
         });
       } catch (error) {
@@ -66,16 +71,23 @@ const SwipeButton = () => {
   const makeCall = (clinicIndex = 0) => {
     if (clinics.length > 0 && clinicIndex < clinics.length) {
       const phoneNumber = clinics[clinicIndex]?.formatted_phone_number;
-      console.log(`Trying to call Clinic ${clinicIndex + 1} with Phone Number: ${phoneNumber}`); // Debugging line
+      console.log(
+        `Trying to call Clinic ${
+          clinicIndex + 1
+        } with Phone Number: ${phoneNumber}`
+      ); // Debugging line
 
       if (phoneNumber) {
         window.location.href = `tel:${phoneNumber}`;
-         // Set a timeout to call the next clinic if this one fails
-         setTimeout(() => {
+
+        setTimeout(() => {
           makeCall(clinicIndex + 1);
-        }, 30000); // Wait 30 seconds before calling the next clinic
+        }, 30000);
       } else {
-        // If the clinic has no phone number, call the next one
+        console.log(
+          `No phone number for Clinic ${clinicIndex + 1}, trying next clinic.`
+        );
+        // If the clinic has no phone number or the call fails, call the next one
         makeCall(clinicIndex + 1);
       }
     } else {

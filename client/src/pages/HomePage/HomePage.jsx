@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { getChatGPTResponse } from '../../utils/chatgptApi';
-import PageTop from '../../components/PageTop/PageTop.jsx'
+import Header from '../../components/Header/Header';
 
 import "./HomePage.scss";
 
@@ -23,7 +23,7 @@ function HomePage() {
 
   return (
     <div>
-      <PageTop />
+      <Header />
       <h1>Welcome to Home Page</h1>
       <form onSubmit={handleSubmit}>
         <textarea

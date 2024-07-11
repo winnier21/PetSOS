@@ -54,7 +54,7 @@ function NavigationPage() {
     };
 
     fetchCurrentLocation();
-  }, [map]);
+  }, [currentLocationMarker, map]);
 
   useEffect(() => {
     const initializeAutocomplete = () => {
@@ -92,7 +92,7 @@ function NavigationPage() {
     }).catch((error) => {
       console.error('Error loading Google Maps script:', error);
     });
-  }, [map, currentLocation]);
+  }, [map, currentLocation, setUseNearest]);
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
