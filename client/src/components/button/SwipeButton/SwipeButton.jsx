@@ -7,6 +7,7 @@ const SwipeButton = () => {
   const [startX, setStartX] = useState(0);
   const [swipePosition, setSwipePosition] = useState(0);
   const [clinics, setClinics] = useState([]);
+  const [currentClinic, setCurrentClinic] = useState(null);
   const swipeButtonRef = useRef(null);
 
   useEffect(() => {
@@ -20,13 +21,13 @@ const SwipeButton = () => {
             }/api/navigation/getPlaces?latitude=${latitude}&longitude=${longitude}&radius=5000`
           );
           const data = await response.json();
-          console.log("Fetched clinics data:", data); // Debugging line
 
           // Log each clinic's formatted phone number to check if it exists
           data.results.forEach((clinic, index) => {
             console.log(
-              `Clinic ${index + 1} Phone Number:`,
-              clinic.formatted_phone_number
+              `Clinic ${index + 1}: ${clinic.name}, Phone# : ${
+                clinic.formatted_phone_number
+              }`
             );
           });
 
@@ -70,11 +71,13 @@ const SwipeButton = () => {
 
   const makeCall = (clinicIndex = 0) => {
     if (clinics.length > 0 && clinicIndex < clinics.length) {
+      const clinic = clinics[clinicIndex];
       const phoneNumber = clinics[clinicIndex]?.formatted_phone_number;
+      setCurrentClinic(clinic);
       console.log(
-        `Trying to call Clinic ${
-          clinicIndex + 1
-        } with Phone Number: ${phoneNumber}`
+        `Trying to call Clinic ${clinicIndex + 1}: ${
+          clinic.name
+        }, Phone#: ${phoneNumber}`
       ); // Debugging line
 
       if (phoneNumber) {
@@ -143,6 +146,11 @@ const SwipeButton = () => {
 
         <h2>Swipe to call animal clinic</h2>
       </div>
+      {currentClinic && (
+        <div className="swipe-clinic-info">
+          <p>Calling: {currentClinic.name}</p>
+        </div>
+      )}
     </main>
   );
 };
