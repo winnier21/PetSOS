@@ -4,11 +4,12 @@
 @use "../../styles/variables" as *;
 
 .navbar {
-  position: fixed;
+  position: sticky;
   height: 3.2rem;
   left: 1rem;
   right: 1rem;
   margin-bottom: 1rem;
+  margin-top:2rem;
   bottom: 0;
   background-color: $white;
   border-radius: 10rem;

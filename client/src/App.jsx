@@ -11,11 +11,12 @@ function App() {
     <Router>
       <div className="App">
         {/* <PageTop /> */}
-        <NavBar />
+        
         <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/navigation" element={<NavigationPage />} />
         </Routes>
+        <NavBar />
       </div>
     </Router>
   );
