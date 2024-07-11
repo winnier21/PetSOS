@@ -1,15 +1,15 @@
-import { useEffect, useState, useRef } from 'react';
-import { loadGoogleMaps } from '../../utils/loadGoogleMaps'; // Adjust the path as necessary
+import { useEffect, useState, useRef } from "react";
+import { loadGoogleMaps } from "../../utils/loadGoogleMaps";
 
 function NavigationPage() {
-  const [directionsUrl, setDirectionsUrl] = useState('');
+  const [directionsUrl, setDirectionsUrl] = useState("");
   const [map, setMap] = useState(null);
   const [currentLocationMarker, setCurrentLocationMarker] = useState(null);
   const [setUseNearest] = useState(true);
-  const [destination, setDestination] = useState('');
+  const [destination, setDestination] = useState("");
   const [currentLocation, setCurrentLocation] = useState(null);
   const [selectedPlace, setSelectedPlace] = useState(null);
-  const [showDirections, setShowDirections] = useState(false); // New state to track whether directions are shown
+  const [showDirections, setShowDirections] = useState(false);
   const inputRef = useRef(null);
   const autocompleteRef = useRef(null);
   const mapRef = useRef(null);
@@ -26,17 +26,20 @@ function NavigationPage() {
             setCurrentLocation(location);
 
             if (map) {
-              const newCenter = new window.google.maps.LatLng(location.latitude, location.longitude);
+              const newCenter = new window.google.maps.LatLng(
+                location.latitude,
+                location.longitude
+              );
               map.setCenter(newCenter);
 
               if (!currentLocationMarker) {
                 const marker = new window.google.maps.Marker({
                   position: newCenter,
                   map: map,
-                  title: 'Your current location',
+                  title: "Your current location",
                   icon: {
-                    url: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'
-                  }
+                    url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+                  },
                 });
                 setCurrentLocationMarker(marker);
               } else {
@@ -45,11 +48,11 @@ function NavigationPage() {
             }
           },
           (error) => {
-            console.error('Error fetching current location:', error);
+            console.error("Error fetching current location:", error);
           }
         );
       } else {
-        console.error('Geolocation is not supported by this browser.');
+        console.error("Geolocation is not supported by this browser.");
       }
     };
 
@@ -59,39 +62,46 @@ function NavigationPage() {
   useEffect(() => {
     const initializeAutocomplete = () => {
       if (window.google) {
-        autocompleteRef.current = new window.google.maps.places.Autocomplete(inputRef.current, {
-          types: ['establishment'],
-          fields: ['place_id', 'name', 'geometry', 'opening_hours']
-        });
+        autocompleteRef.current = new window.google.maps.places.Autocomplete(
+          inputRef.current,
+          {
+            types: ["establishment"],
+            fields: ["place_id", "name", "geometry", "opening_hours"],
+          }
+        );
 
-        autocompleteRef.current.addListener('place_changed', () => {
+        autocompleteRef.current.addListener("place_changed", () => {
           const place = autocompleteRef.current.getPlace();
           setSelectedPlace(place);
-          console.log('Selected place:', place); // Debugging statement
+          console.log("Selected place:", place);
           if (place.geometry && currentLocation) {
             const origin = `${currentLocation.latitude},${currentLocation.longitude}`;
             const destination = `${place.geometry.location.lat()},${place.geometry.location.lng()}`;
-            const directionsUrl = `https://www.google.com/maps/embed/v1/directions?key=${import.meta.env.VITE_GOOGLE_API_KEY}&origin=${origin}&destination=${destination}&mode=driving`;
+            const directionsUrl = `https://www.google.com/maps/embed/v1/directions?key=${
+              import.meta.env.VITE_GOOGLE_API_KEY
+            }&origin=${origin}&destination=${destination}&mode=driving`;
             setDirectionsUrl(directionsUrl);
-            setShowDirections(true); // Set to true when directions are available
+            setShowDirections(true);
             setUseNearest(false);
           }
         });
       }
     };
 
-    loadGoogleMaps(import.meta.env.VITE_GOOGLE_API_KEY).then(() => {
-      if (mapRef.current && !map) {
-        const initialMap = new window.google.maps.Map(mapRef.current, {
-          zoom: 14,
-          center: { lat: 49.2827, lng: -123.1207 },
-        });
-        setMap(initialMap);
-        initializeAutocomplete();
-      }
-    }).catch((error) => {
-      console.error('Error loading Google Maps script:', error);
-    });
+    loadGoogleMaps(import.meta.env.VITE_GOOGLE_API_KEY)
+      .then(() => {
+        if (mapRef.current && !map) {
+          const initialMap = new window.google.maps.Map(mapRef.current, {
+            zoom: 14,
+            center: { lat: 49.2827, lng: -123.1207 },
+          });
+          setMap(initialMap);
+          initializeAutocomplete();
+        }
+      })
+      .catch((error) => {
+        console.error("Error loading Google Maps script:", error);
+      });
   }, [map, currentLocation, setUseNearest]);
 
   const handleFormSubmit = (e) => {
@@ -99,9 +109,11 @@ function NavigationPage() {
     if (destination && currentLocation) {
       const { latitude, longitude } = currentLocation;
       const origin = `${latitude},${longitude}`;
-      const directionsUrl = `https://www.google.com/maps/embed/v1/directions?key=${import.meta.env.VITE_GOOGLE_API_KEY}&origin=${origin}&destination=${destination}&mode=driving`;
+      const directionsUrl = `https://www.google.com/maps/embed/v1/directions?key=${
+        import.meta.env.VITE_GOOGLE_API_KEY
+      }&origin=${origin}&destination=${destination}&mode=driving`;
       setDirectionsUrl(directionsUrl);
-      setShowDirections(true); // Set to true when directions are available
+      setShowDirections(true);
       setUseNearest(false);
     }
   };
@@ -120,7 +132,7 @@ function NavigationPage() {
         <button type="submit">Get Directions</button>
       </form>
       {!showDirections && (
-        <div ref={mapRef} style={{ width: '100%', height: '550px' }}></div>
+        <div ref={mapRef} style={{ width: "100%", height: "550px" }}></div>
       )}
       {showDirections && directionsUrl && (
         <iframe

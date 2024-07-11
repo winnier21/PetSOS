@@ -1,4 +1,4 @@
-const API_URL = import.meta.env.VITE_API_URL; // Use the API URL from the environment variable
+const API_URL = import.meta.env.VITE_API_URL; 
 
 export const getChatGPTResponse = async (prompt) => {
   try {
@@ -23,7 +23,7 @@ export const getChatGPTResponse = async (prompt) => {
     return data.response;
   } catch (error) {
     console.error("Error fetching response from OpenAI:", error);
-    throw error; // Rethrow to be handled by caller
+    throw error; 
   }
 };
 

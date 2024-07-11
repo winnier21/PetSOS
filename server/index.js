@@ -7,7 +7,7 @@ import getTimestamp from "../client/src/utils/utils.js";
 
 const app = express();
 app.use(cors({
-    origin: 'http://localhost:5173'  // Adjust the origin according to your client's URL in production
+    origin: 'http://localhost:5173'  
   }));
 
 const PORT = process.env.PORT || 8080;

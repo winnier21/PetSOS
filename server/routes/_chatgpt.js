@@ -1,17 +1,17 @@
-import express from 'express';
-import dotenv from 'dotenv';
-import OpenAI from 'openai';
+import express from "express";
+import dotenv from "dotenv";
+import OpenAI from "openai";
 
-dotenv.config();  // Ensure this is at the top to load environment variables early
+dotenv.config();
 
 const router = express.Router();
 
-console.log('OPENAI_API_KEY:', process.env.OPENAI_API_KEY);
+console.log("OPENAI_API_KEY:", process.env.OPENAI_API_KEY);
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-router.post('/getChatGPTResponse', async (req, res) => {
+router.post("/getChatGPTResponse", async (req, res) => {
   const { prompt } = req.body;
   try {
     const response = await openai.chat.completions.create({
@@ -29,15 +29,15 @@ router.post('/getChatGPTResponse', async (req, res) => {
   } catch (error) {
     console.error("Error fetching response from OpenAI:", error);
 
-
-    // Capture detailed error response
     if (error.response) {
-        console.error("Error response status:", error.response.status);
-        console.error("Error response data:", error.response.data);
-      } else {
-        console.error("Error response:", error);
-      }
-    res.status(500).send("An error occurred while fetching the response from OpenAI.");
+      console.error("Error response status:", error.response.status);
+      console.error("Error response data:", error.response.data);
+    } else {
+      console.error("Error response:", error);
+    }
+    res
+      .status(500)
+      .send("An error occurred while fetching the response from OpenAI.");
   }
 });
 

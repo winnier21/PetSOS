@@ -11,7 +11,7 @@ function HomePage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError(''); // Reset error state
+    setError(''); 
     try {
       const apiResponse = await getChatGPTResponse(prompt);
       setResponse(apiResponse);

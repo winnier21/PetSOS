@@ -22,7 +22,6 @@ const SwipeButton = () => {
           );
           const data = await response.json();
 
-          // Log each clinic's formatted phone number to check if it exists
           data.results.forEach((clinic, index) => {
             console.log(
               `Clinic ${index + 1}: ${clinic.name}, Phone# : ${
@@ -78,7 +77,7 @@ const SwipeButton = () => {
         `Trying to call Clinic ${clinicIndex + 1}: ${
           clinic.name
         }, Phone#: ${phoneNumber}`
-      ); // Debugging line
+      );
 
       if (phoneNumber) {
         window.location.href = `tel:${phoneNumber}`;
