@@ -9,18 +9,27 @@ const SwipeButton = () => {
   const [clinics, setClinics] = useState([]);
   const swipeButtonRef = useRef(null);
 
-
   useEffect(() => {
     const fetchClinics = async () => {
       try {
-        // Get current location
         navigator.geolocation.getCurrentPosition(async (position) => {
           const { latitude, longitude } = position.coords;
-          // Fetch nearby vet clinics
           const response = await fetch(
-            `/api/navigation/getPlaces?latitude=${latitude}&longitude=${longitude}&radius=5000`
+            `${
+              import.meta.env.VITE_API_URL
+            }/api/navigation/getPlaces?latitude=${latitude}&longitude=${longitude}&radius=5000`
           );
           const data = await response.json();
+          console.log("Fetched clinics data:", data); // Debugging line
+
+          // Log each clinic's formatted phone number to check if it exists
+          data.results.forEach((clinic, index) => {
+            console.log(
+              `Clinic ${index + 1} Phone Number:`,
+              clinic.formatted_phone_number
+            );
+          });
+
           setClinics(data.results);
         });
       } catch (error) {
@@ -35,7 +44,7 @@ const SwipeButton = () => {
     setIsSwiping(true);
     setStartX(e.clientX);
   };
-  
+
   const handleTouchStart = (e) => {
     setIsSwiping(true);
     setStartX(e.touches[0].clientX);
@@ -58,12 +67,26 @@ const SwipeButton = () => {
       }
     }
   };
+
   const makeCall = (clinicIndex = 0) => {
     if (clinics.length > 0 && clinicIndex < clinics.length) {
-      const phoneNumber = clinics[clinicIndex].formatted_phone_number;
+      const phoneNumber = clinics[clinicIndex]?.formatted_phone_number;
+      console.log(
+        `Trying to call Clinic ${
+          clinicIndex + 1
+        } with Phone Number: ${phoneNumber}`
+      ); // Debugging line
+
       if (phoneNumber) {
         window.location.href = `tel:${phoneNumber}`;
+
+        setTimeout(() => {
+          makeCall(clinicIndex + 1);
+        }, 30000);
       } else {
+        console.log(
+          `No phone number for Clinic ${clinicIndex + 1}, trying next clinic.`
+        );
         // If the clinic has no phone number or the call fails, call the next one
         makeCall(clinicIndex + 1);
       }
@@ -95,7 +118,8 @@ const SwipeButton = () => {
   };
 
   return (
-    <main className="swipe"
+    <main
+      className="swipe"
       onMouseMove={handleMouseMove}
       onTouchMove={handleTouchMove}
       onMouseUp={handleMouseUp}

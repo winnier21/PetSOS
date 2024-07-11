@@ -1,9 +1,9 @@
 import logo from "../../assets/icons/logo.png";
 import SwipeButton from "../button/SwipeButton/SwipeButton";
 import vectorIcon from "../../assets/icons/vector.svg";
-import "./PageTop.scss";
+import "./Header.scss";
 
-function PageTop() {
+function Header() {
   return (
     <main className="pagetop">
       <section>
@@ -22,4 +22,4 @@ function PageTop() {
     
   );
 }
-export default PageTop;
+export default Header;
