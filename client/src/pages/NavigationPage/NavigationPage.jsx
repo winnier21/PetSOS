@@ -5,7 +5,7 @@ function NavigationPage() {
   const [directionsUrl, setDirectionsUrl] = useState('');
   const [map, setMap] = useState(null);
   const [currentLocationMarker, setCurrentLocationMarker] = useState(null);
-  const [useNearest, setUseNearest] = useState(true);
+  const [setUseNearest] = useState(true);
   const [destination, setDestination] = useState('');
   const [currentLocation, setCurrentLocation] = useState(null);
   const [selectedPlace, setSelectedPlace] = useState(null);
