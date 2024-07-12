@@ -41,7 +41,7 @@ function HomePage() {
       {error && <p className="error">{error}</p>}
       {response && (
         <section className='homepage-answer-area'>
-          <h2 className='homepage-answer-title'>PetSOS:</h2>
+          <h2 className='homepage-answer-title'>PetSOS says...</h2>
           <p className='homepage-answer-response'>{response}</p>
         </section>
       )} 

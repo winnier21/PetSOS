@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { loadGoogleMaps } from "../../utils/loadGoogleMaps";
+import "./NavigationPage.scss";
 
 function NavigationPage() {
   const [directionsUrl, setDirectionsUrl] = useState("");
@@ -92,7 +93,7 @@ function NavigationPage() {
       .then(() => {
         if (mapRef.current && !map) {
           const initialMap = new window.google.maps.Map(mapRef.current, {
-            zoom: 14,
+            zoom: 10,
             center: { lat: 49.2827, lng: -123.1207 },
           });
           setMap(initialMap);
@@ -119,49 +120,55 @@ function NavigationPage() {
   };
 
   return (
-    <div>
-      <h1>Navigation</h1>
-      <form onSubmit={handleFormSubmit}>
+    <main>
+      <h1 className="navigationpage-title">Direction</h1>
+      <form className="navigationpage-form" onSubmit={handleFormSubmit}>
+        {!showDirections && (
+          <div ref={mapRef} style={{ width: "100%", height: "550px" }}></div>
+        )}
+        {showDirections && directionsUrl && (
+          <iframe
+            className="navigationpage-iframe"
+            title="google-directions"
+            width="100%"
+            height="550"
+            src={directionsUrl}
+            allowFullScreen
+          ></iframe>
+        )}
         <input
+          className="navigationpage-input"
           ref={inputRef}
           type="text"
           value={destination}
           onChange={(e) => setDestination(e.target.value)}
           placeholder="Enter destination address"
         />
-        <button type="submit">Get Directions</button>
+        <button className="navigationpage-button" type="submit">
+          Get Directions
+        </button>
       </form>
-      {!showDirections && (
-        <div ref={mapRef} style={{ width: "100%", height: "550px" }}></div>
-      )}
-      {showDirections && directionsUrl && (
-        <iframe
-          title="google-directions"
-          width="100%"
-          height="550"
-          src={directionsUrl}
-          allowFullScreen
-        ></iframe>
-      )}
       {selectedPlace && selectedPlace.opening_hours ? (
-        <div>
-          <h2>{selectedPlace.name}</h2>
-          <p>Opening Hours:</p>
-          <ul>
-            {selectedPlace.opening_hours.weekday_text.map((hour, index) => (
-              <li key={index}>{hour}</li>
-            ))}
-          </ul>
-        </div>
+        <section className="navigationpage-info">
+          <h2 className="navigationpage-name">{selectedPlace.name}</h2>
+          <div className="navigationpage-container">
+            <p className="navigationpage-hours">Opening Hours:</p>
+            <ul className="navigationpage-list">
+              {selectedPlace.opening_hours.weekday_text.map((hour, index) => (
+                <li key={index}>{hour}</li>
+              ))}
+            </ul>
+          </div>
+        </section>
       ) : (
         selectedPlace && (
-          <div>
-            <h2>{selectedPlace.name}</h2>
-            <p>No opening hours available.</p>
-          </div>
+          <section>
+            <h2 className="navigationpage-name">{selectedPlace.name}</h2>
+            <p className="navigationpage-hours">No opening hours available.</p>
+          </section>
         )
       )}
-    </div>
+    </main>
   );
 }
 

@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import "./SwipeButton.scss";
-import sosIcon from "../../../assets/icons/sos-icon.png";
+import sosIcon from "../../../assets/icons/sos-icon.jpeg";
 
 const SwipeButton = () => {
   const [isSwiping, setIsSwiping] = useState(false);

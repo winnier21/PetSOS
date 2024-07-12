@@ -3,3 +3,61 @@
 @use "../../styles/typography" as *;
 @use "../../styles/variables" as *;
 
+.navigationpage {
+  &-title {
+    margin-top: 2rem;
+    color: $black;
+  }
+  &-input {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 0.0625rem;
+    margin-top:1rem;
+  }
+  &-form {
+    border-radius: 0.5rem;
+    padding: 1rem 1rem 0 1rem;
+    width: 100%;
+  }
+  &-iframe{
+    border:none;
+  }
+  &-button {
+    width: 100%;
+    background-color: $blue;
+    color: $white;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+    padding: 0.5rem;
+  }
+  &-info {
+    margin: 1rem;
+  }
+  &-name {
+    color: $black;
+    padding: 0rem;
+    margin-left:0;
+    padding-bottom: 1rem;
+  }
+  &-container {
+    background-color: $white;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+  }
+  &-hours {
+    padding: 0.5rem;
+    font-weight: 800;
+    font-size: 0.9rem;
+    color: $black;
+  }
+  &-list {
+    list-style-type: none;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: $black;
+  }
+}
