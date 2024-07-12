@@ -22,29 +22,31 @@ function HomePage() {
   };
 
   return (
-    <div>
+    <main>
       <Header />
-      <h1>Welcome to Home Page</h1>
-      <form onSubmit={handleSubmit}>
+      <section className='homepage'>
+      <h2 className='homepage-heading'>Do you have any pet emergency?</h2>
+      <form className="homepage-form" onSubmit={handleSubmit}>
         <textarea
           className='homepage-textarea'
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
           rows="4"
           cols="50"
-          placeholder="Enter your prompt here..."
+          placeholder="Tell me what happened to your pet..."
         />
         <br />
-        <button type="submit">Get Response</button>
+        <button className="homepage-button" type="submit">Get Response</button>
       </form>
       {error && <p className="error">{error}</p>}
       {response && (
-        <div>
-          <h2>Response from ChatGPT:</h2>
-          <p>{response}</p>
-        </div>
-      )}
-    </div>
+        <section className='homepage-answer-area'>
+          <h2 className='homepage-answer-title'>PetSOS:</h2>
+          <p className='homepage-answer-response'>{response}</p>
+        </section>
+      )} 
+      </section>
+    </main>
   );
 }
 

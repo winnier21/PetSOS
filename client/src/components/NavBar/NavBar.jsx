@@ -1,5 +1,5 @@
 import "./NavBar.scss";
-import call from "../../assets/icons/emergency_call.svg";
+import call from "../../assets/icons/emergency_call.png";
 import navigation from "../../assets/icons/navigation.svg";
 import { Link } from 'react-router-dom';
 
