@@ -6,9 +6,8 @@ import navigationRoutes from "./routes/_navigation.js";
 import getTimestamp from "../client/src/utils/utils.js";
 
 const app = express();
-app.use(cors({
-    origin: 'http://localhost:5173'  
-  }));
+app.use(cors({ origin: 'https://10.0.0.59:5173' }));
+
 
 const PORT = process.env.PORT || 8080;
 const BACKEND_URL = process.env.BACKEND_URL;
