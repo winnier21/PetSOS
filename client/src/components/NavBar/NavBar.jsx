@@ -16,7 +16,7 @@ function NavBar() {
           <Link to="/navigation">
           <div className="navbar__item">
           <img className="navbar__navigation" alt="navigation" src={navigation} />
-          <h3 className="navbar__text">Navigation</h3>
+          <h3 className="navbar__text">Direction</h3>
         </div>
         </Link>
       </section>

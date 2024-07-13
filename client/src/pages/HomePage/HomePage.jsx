@@ -22,7 +22,7 @@ function HomePage() {
   };
 
   return (
-    <main>
+    <main className="main-container">
       <Header />
       <section className='homepage'>
       <h2 className='homepage-heading'>Do you have any pet emergency?</h2>

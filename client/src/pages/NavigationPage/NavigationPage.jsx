@@ -120,11 +120,11 @@ function NavigationPage() {
   };
 
   return (
-    <main>
+    <main className="main-container">
       <h1 className="navigationpage-title">Direction</h1>
       <form className="navigationpage-form" onSubmit={handleFormSubmit}>
         {!showDirections && (
-          <div ref={mapRef} style={{ width: "100%", height: "550px" }}></div>
+          <div ref={mapRef} style={{ width: "100%", height: "400px" }}></div>
         )}
         {showDirections && directionsUrl && (
           <iframe

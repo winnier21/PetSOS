@@ -3,6 +3,11 @@
 @use "../../styles/typography" as *;
 @use "../../styles/variables" as *;
 
+.main-container{
+    display:flex;
+    flex-direction:column;
+    flex-grow:1;
+  }
 .homepage{
     &-form{
         padding:1rem;
@@ -51,4 +56,3 @@ margin-bottom: 1rem;
     font-size: 0.8rem;
 }
 }
-
