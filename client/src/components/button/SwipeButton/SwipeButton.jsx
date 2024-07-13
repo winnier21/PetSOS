@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import "./SwipeButton.scss";
 import sosIcon from "../../../assets/icons/sos-icon.jpeg";
+import call from "../../../assets/icons/emergency_call.svg";
 
 const SwipeButton = () => {
   const [isSwiping, setIsSwiping] = useState(false);
@@ -120,7 +121,8 @@ const SwipeButton = () => {
   };
 
   return (
-    <main
+    <>
+    <section
       className="swipe"
       onMouseMove={handleMouseMove}
       onTouchMove={handleTouchMove}
@@ -137,6 +139,7 @@ const SwipeButton = () => {
       >
         <img className="swipe-icon" alt="sos call" src={sosIcon} />
       </div>
+
       <div className="swipe-bar">
         <div
           className="swipe-overlay"
@@ -145,12 +148,16 @@ const SwipeButton = () => {
 
         <h2>Swipe to call animal clinic</h2>
       </div>
+    </section>
+    <section>
       {currentClinic && (
         <div className="swipe-clinic-info">
-          <p>Calling: {currentClinic.name}</p>
+          <img className="swpipe-clinic-icon" src={call} alt="emergency call"></img>
+          <h3>Calling... {currentClinic.name}</h3>
         </div>
       )}
-    </main>
+    </section>
+    </>
   );
 };
 
