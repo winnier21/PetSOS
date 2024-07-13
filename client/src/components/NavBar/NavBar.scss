@@ -4,7 +4,7 @@
 @use "../../styles/variables" as *;
 
 .navbar {
-  position: sticky;
+  position: fixed;
   height: 3.2rem;
   left: 1rem;
   right: 1rem;
