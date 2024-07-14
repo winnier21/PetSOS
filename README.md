@@ -1,12 +1,5 @@
 <a id="readme-top"></a>
 
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
 <br />
 <div align="center">
   <a href="https://github.com/winnier21/chelsea-hsieh-capstone">
@@ -98,10 +91,6 @@ To get a local copy up and running follow these simple steps.
   npm install npm@latest -g
   ```
 ### Installation
-* npm
-  ```sh
-  npm install npm@latest -g
-     ```
 
 1. Get a free Places API Key at [https://console.cloud.google.com/apigee/welcome](https://console.cloud.google.com/apigee/welcome)
 
@@ -113,24 +102,23 @@ To get a local copy up and running follow these simple steps.
    ```
 3. Install NPM packages
    ```sh
-   npm install cors dotenv express node-fetch nodemon openai npm@latest -g
+   npm install cors dotenv express node-fetch nodemon openai 
    ```
 4. Enter your API in `.env.example` files in both client and server directories and renames the file name of.env.example to .env
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 # Server .env
-PORT=8080
-BACKEND_URL=http://localhost
-OPENAI_API_KEY=OpenAI_API
-GOOGLE_API_KEY=Places_API
+- PORT=8080
+- BACKEND_URL=http://localhost
+- OPENAI_API_KEY=Put you your OpenAI_API here
+- GOOGLE_API_KEY=Put in your Places_API here 
 
 # Client .env
-VITE_OPENAI_API_KEY=OpenAI_API
-VITE_GOOGLE_API_KEY=Places_API
-VITE_API_URL=(http://localhost:8080)
+- VITE_OPENAI_API_KEY=Put you your OpenAI_API here
+- VITE_GOOGLE_API_KEY=Put in your Places_API here
+- VITE_API_URL=(http://localhost:8080)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Usage
@@ -138,52 +126,50 @@ Use the PetSOS app to manage pet emergencies efficiently. The app allows you to:
 
 Automatically call the nearest veterinary clinic.
 Get real-time navigation to the nearest open clinic.
+
 Receive step-by-step first aid instructions.
 Chat with an intelligent assistant for immediate advice.
-For more examples, please refer to the Documentation
+
+Start the Server in terminal:
+```sh
+cd server
+npm run dev
+```
+
+Start the Client in terminal:
+```sh
+cd client
+npm run dev
+```
+Start the browser (app): 
+```sh
+- click "http://localhost:5173" 
+- Remember to allow navigation your current location when the request pops out
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-Roadmap
- Add Changelog
- Add back to top links
- Add Additional Templates w/ Examples
- Add "components" document to easily copy & paste sections of the readme
- Multi-language Support
- Chinese
- Spanish
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-Contributing
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
+## Screenshots
 
-Fork the Project
-Create your Feature Branch (git checkout -b feature/AmazingFeature)
-Commit your Changes (git commit -m 'Add some AmazingFeature')
-Push to the Branch (git push origin feature/AmazingFeature)
-Open a Pull Request
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-License
-Distributed under the MIT License. See LICENSE.txt for more information.
+
+## Roadmap
+1. Initial Setup and Basic Layout
+2. API Integration and UI Development
+3. Chat Interface and ChatGPT Integration
+4. Self-Testing and Refinement
+5. Final Adjustments and Comprehensive Testing
+6. Preparation for Presentation
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-Contact
+
+
+## Contact
 Chelsea Hsieh - winnier16@gmail.com
 
 Project Link: https://github.com/winnier21/PetSOS
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-Acknowledgments
-Choose an Open Source License
-GitHub Emoji Cheat Sheet
-Malven's Flexbox Cheatsheet
-Malven's Grid Cheatsheet
-Img Shields
-GitHub Pages
-Font Awesome
-React Icons
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
