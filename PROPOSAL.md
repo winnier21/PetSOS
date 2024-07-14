@@ -30,20 +30,18 @@ PetSOS aims to bridge the knowledge gap that exists in pet emergency first aid. 
 1. Frontend: React Native for building a responsive mobile application.
 2. Backend: Node.js with Express for handling API requests.
 3. Database: No persistent user data storage to maintain privacy and simplicity. Temporary data handling for session-based actions like calls and navigation.
-4. Additional Technologies: Google Maps API for navigation, Twilio API for automating communication with veterinary services, and OpenAI's ChatGPT API for the chat feature.
+4. Additional Technologies: Places API for navigation and clinics' information, and OpenAI's ChatGPT API for the chat feature.
 
 ### APIs
 
-Google Maps API: For real-time navigation and location services.
-Twilio API: For automating calls to veterinary clinics.
+Places API: For real-time navigation and location services.
 OpenAI ChatGPT API: For processing natural language inputs and providing emergency advice.
 
 ### Sitemap
 
-1. Home Page: Direct access to emergency call action, first aid information, and navigation.
-2. First Aid Guide: A searchable list of common pet emergencies with detailed instructions for immediate care.
-3. Navigation Page: Real-time directions to the nearest veterinary clinic from the user's location.
-4. Chat Page: An interactive chat interface where users can type in descriptions of their pet's condition and receive guidance.
+1. Home Page: Direct access to emergency call action, first aid information, and an interactive chat interface where users can type in descriptions of their pet's condition and receive guidance.
+3. Navigation Page: Real-time directions to the nearest veterinary clinic with opening hours information or the clinic the users would like to go from the user's location.
+
 
 ### Mockups
 
