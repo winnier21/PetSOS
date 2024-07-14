@@ -1,13 +1,16 @@
 const API_URL = import.meta.env.VITE_API_URL; 
+const prePrompt = "Give the response with medical procedures in numbered list without leading spaces";
 
 export const getChatGPTResponse = async (prompt) => {
   try {
+    const fullPrompt = `${prePrompt}\n\n${prompt}`;
     const response = await fetch(`${API_URL}/api/homepage/getChatGPTResponse`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ prompt })
+      
+      body: JSON.stringify({ prompt: fullPrompt })
     });
 
     const contentType = response.headers.get('content-type');

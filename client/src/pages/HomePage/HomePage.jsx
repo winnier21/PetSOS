@@ -42,7 +42,7 @@ function HomePage() {
       {response && (
         <section className='homepage-answer-area'>
           <h2 className='homepage-answer-title'>PetSOS says...</h2>
-          <p className='homepage-answer-response'>{response}</p>
+          <div className='homepage-answer-response' dangerouslySetInnerHTML={{ __html: response }} />
         </section>
       )} 
       </section>
