@@ -1,7 +1,7 @@
 import logo from "../../assets/icons/logo.png";
-import SwipeButton from "../button/SwipeButton/SwipeButton";
+import SwipeButton from "../SwipeButton/SwipeButton";
 import vectorIcon from "../../assets/icons/vector.svg";
-import "./Header.scss";
+import "./PageTop.scss";
 
 function Header() {
   return (
@@ -15,11 +15,17 @@ function Header() {
         <SwipeButton />
       </section>
       <article className="pagetop-container">
-      <img className="pagetop-vector" alt="vector icon" src={vectorIcon}></img>
-      <h3 className="pagetop-text">This app will automatically dial the next closest clinic if this call fails. </h3>
+        <img
+          className="pagetop-vector"
+          alt="vector icon"
+          src={vectorIcon}
+        ></img>
+        <h3 className="pagetop-text">
+          This app will automatically dial the next closest clinic if this call
+          fails.{" "}
+        </h3>
       </article>
     </main>
-    
   );
 }
 export default Header;

@@ -1,36 +1,36 @@
 @use "../styles/variables" as *;
 * {
-    box-sizing: border-box;
-    font-family: "Outfit", sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  html {
-    font-size: 16px;
-    background: url(../../src/assets/icons/bg.png);
-    background-size: contain;
-  }
-  
-  h1 {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-weight: 700;
-  }
-  
-  h2 {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-weight: 700;
-  }
-  h3 {
-    font-size: 0.8125rem;
-    line-height: 1.125rem;
-    font-weight: 700;
-  }
-  
-  body {
-    font-size: 0.8125rem;
-    line-height: 1.125rem;
-    font-weight: 400;
-  }
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  background: url(../../src/assets/icons/bg.png);
+  background-size: contain;
+}
+
+h1 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+h3 {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 700;
+}
+
+body {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}

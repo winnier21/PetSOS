@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import "./SwipeButton.scss";
-import sosIcon from "../../../assets/icons/sos-icon.jpeg";
-import call from "../../../assets/icons/emergency_call.svg";
+import sosIcon from "../../assets/icons/sos-icon.jpeg";
+import call from "../../assets/icons/emergency_call.svg";
 
 const SwipeButton = () => {
   const [isSwiping, setIsSwiping] = useState(false);
@@ -122,41 +122,45 @@ const SwipeButton = () => {
 
   return (
     <>
-    <section
-      className="swipe"
-      onMouseMove={handleMouseMove}
-      onTouchMove={handleTouchMove}
-      onMouseUp={handleMouseUp}
-      onTouchEnd={handleTouchEnd}
-      onMouseLeave={handleMouseUp}
-    >
-      <div
-        className="swipe-button"
-        ref={swipeButtonRef}
-        onMouseDown={handleMouseDown}
-        onTouchStart={handleTouchStart}
-        style={{ transform: `translateX(${swipePosition}px)` }}
+      <section
+        className="swipe"
+        onMouseMove={handleMouseMove}
+        onTouchMove={handleTouchMove}
+        onMouseUp={handleMouseUp}
+        onTouchEnd={handleTouchEnd}
+        onMouseLeave={handleMouseUp}
       >
-        <img className="swipe-icon" alt="sos call" src={sosIcon} />
-      </div>
-
-      <div className="swipe-bar">
         <div
-          className="swipe-overlay"
-          style={{ width: `${swipePosition}px` }}
-        ></div>
-
-        <h2>Swipe to call animal clinic</h2>
-      </div>
-    </section>
-    <section>
-      {currentClinic && (
-        <div className="swipe-clinic-info">
-          <img className="swpipe-clinic-icon" src={call} alt="emergency call"></img>
-          <h3>Calling... {currentClinic.name}</h3>
+          className="swipe-button"
+          ref={swipeButtonRef}
+          onMouseDown={handleMouseDown}
+          onTouchStart={handleTouchStart}
+          style={{ transform: `translateX(${swipePosition}px)` }}
+        >
+          <img className="swipe-icon" alt="sos call" src={sosIcon} />
         </div>
-      )}
-    </section>
+
+        <div className="swipe-bar">
+          <div
+            className="swipe-overlay"
+            style={{ width: `${swipePosition}px` }}
+          ></div>
+
+          <h2>Swipe to call animal clinic</h2>
+        </div>
+      </section>
+      <section>
+        {currentClinic && (
+          <div className="swipe-clinic-info">
+            <img
+              className="swpipe-clinic-icon"
+              src={call}
+              alt="emergency call"
+            ></img>
+            <h3>Calling... {currentClinic.name}</h3>
+          </div>
+        )}
+      </section>
     </>
   );
 };

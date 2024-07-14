@@ -13,7 +13,6 @@ const PLACE_DETAILS_API_URL =
 const DIRECTIONS_API_URL =
   "https://maps.googleapis.com/maps/api/directions/json";
 
-
 const fetchPlaceDetails = async (placeId) => {
   const url = `${PLACE_DETAILS_API_URL}?place_id=${placeId}&fields=formatted_phone_number&key=${GOOGLE_API_KEY}`;
   const response = await fetch(url);
