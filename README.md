@@ -3,7 +3,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/winnier21/chelsea-hsieh-capstone">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="client/src/assets/icons/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">PetSOS</h3>
