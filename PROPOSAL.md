@@ -12,7 +12,7 @@ Pet owners deeply care for their pets, yet many lack the necessary knowledge and
 
 ### User Profile
 
-Pet owners (dogs or cats) who need immediate and reliable emergency responses for their pets. Users may be in remote areas with limited access to veterinary services or may need guidance on handling emergencies before professional help is available.
+Pet owners who need immediate and reliable emergency responses for their pets. Users may be in remote areas with limited access to veterinary services or may need guidance on handling emergencies before professional help is available.
 
 ### Features
 
@@ -20,7 +20,7 @@ PetSOS aims to bridge the knowledge gap that exists in pet emergency first aid. 
 
 1. Automatically prepares a list of nearby veterinarians and calls each until answered.
 2. Guides pet owners with accurate first aid instruction and procedures while waiting for veterinarian response.
-3. Navigates the user towards the clinic that agreed to see the user.
+3. Navigates the user towards the clinic that agreed to see the user or the nearest open clinic based on opening hours information by utilizing Places API.
 4. Interactive Chat Feature: Utilizes the ChatGPT API to let users describe their pet's emergency in natural language and receive immediate, contextually relevant advice.
 
 ## Implementation
@@ -29,18 +29,20 @@ PetSOS aims to bridge the knowledge gap that exists in pet emergency first aid. 
 
 1. Frontend: React Native for building a responsive mobile application.
 2. Backend: Node.js with Express for handling API requests.
-3. Database: No persistent user data storage to maintain privacy and simplicity. Temporary data handling for session-based actions like calls and navigation.
-4. Additional Technologies: Places API for navigation and clinics' information, and OpenAI's ChatGPT API for the chat feature.
+3. Technologies: 
+- Places API for navigation and clinics' information, including navigating users' location to automatically call the nearest clinics.
+- OpenAI's ChatGPT API for the chat feature.
+
 
 ### APIs
 
-Places API: For real-time navigation and location services.
-OpenAI ChatGPT API: For processing natural language inputs and providing emergency advice.
+1. Places API: For real-time navigation and location services.
+2. OpenAI ChatGPT API: For processing natural language inputs and providing emergency advice.
 
 ### Sitemap
 
 1. Home Page: Direct access to emergency call action, first aid information, and an interactive chat interface where users can type in descriptions of their pet's condition and receive guidance.
-3. Navigation Page: Real-time directions to the nearest veterinary clinic with opening hours information or the clinic the users would like to go from the user's location.
+2. Navigation Page: Real-time directions to the nearest veterinary clinic with opening hours information or the clinic the users would like to go from the user's location.
 
 
 ### Mockups
@@ -64,18 +66,42 @@ OpenAI ChatGPT API: For processing natural language inputs and providing emergen
 Focuses on real-time and temporary data handling:
 
 1. Location Data: Used to facilitate emergency calls and navigation during active sessions.
-2. linic Data: Temporarily fetched to display information during emergencies, including clinic names, distances, and contact details.
+2. linic Data: Temporarily fetched to display information during emergencies, including clinic names and opening hours.
 3. User Inputs and Chat Logs: Temporarily stored for the duration of the session to improve the interaction quality.
 
 ### Endpoints
 
-1. GET /clinics/nearby
-   Query Parameters: latitude, longitude
-   Response: [{"clinicName": "Vet Clinic", "distance": "2 km", "isOpen": true, "contactNumber": "123-456-7890"}]
+1. GET /api/navigation/getPlaces
 
-2. POST /calls/initiate
-   Body Parameters: clinicId
-   Response: {"status": "calling", "clinicName": "Vet Clinic", "timeToAnswer": "5 mins"}
+Query Parameters: latitude, longitude, radius
+
+Response:
+json
+```sh
+[
+  {
+    "clinicName": "Vet Clinic",
+    "distance": "2 km",
+    "isOpen": true,
+    "contactNumber": "123-456-7890"
+  }
+]
+```
+2. GET /api/navigation/getDirections
+
+Query Parameters: origin, destination
+Response: Directions data from Google Directions API.
+
+3. POST /api/homepage/getChatGPTResponse
+
+Body Parameters: prompt
+Response:
+json
+```sh
+{
+  "response": "ChatGPT response text"
+}
+```
 
 ### Auth
 
@@ -118,6 +144,7 @@ Collate Presentation Materials: Develop materials that explain the entire app ar
 
 ## Nice-to-haves
 
-1. Offline Access: Allow users to access first aid guides even without internet connectivity.
-2. Multi-Language Support: Offer the app's content in multiple languages to reach a broader audience.
-3. Local Emergency Services: Integrate capabilities to contact local animal emergency services directly from the app.
+1. Voice Recognition Feature: Add a voice recognition feature for the ChatGPT interaction, allowing users to describe their emergencies by voice, which is particularly useful when they have no time to type.
+2. Offline Access: Allow users to access first aid guides even without internet connectivity.
+3. Multi-Language Support: Offer the app's content in multiple languages to reach a broader audience.
+
