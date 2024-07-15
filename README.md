@@ -174,13 +174,16 @@ Project Link: https://github.com/winnier21/PetSOS
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[React-url]: https://reactjs.org/
-[Node.js]:https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg
+[React.js]: https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactnative.dev/
+[Node.js]: https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white
 [Node-url]: https://nodejs.org/en
-
-
+[Express.js]: https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white
+[Express-url]: https://expressjs.com/
+[GooglePlaces]: https://img.shields.io/badge/Google_Places_API-4285F4?style=for-the-badge&logo=google-maps&logoColor=white
+[GooglePlaces-url]: https://developers.google.com/maps/documentation/places/web-service/overview
+[OpenAI]: https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white
+[OpenAI-url]: https://openai.com/
 
 
 
