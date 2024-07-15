@@ -152,7 +152,7 @@ Start the browser (app):
 
 1. **Emergency Call Button**: Swipe right on the SOS button to initiate a call to the nearest veterinary clinic based on your current location. If the call fails, the app will automatically call the next closest clinic.
 
-![Home Page](client/src/assets/mockups/finished_prototype/HomePage.png)
+![Home Page]([client/src/assets/mockups/finished_prototype/HomePage.png](https://github.com/winnier21/PetSOS/blob/f3ee5d1ddb174a2c8033dec490a29c1a76cf23f8/client/src/assets/mockups/finished%20prototype/HomePage_with_chatgpt_response.png))
 
 2. **ChatGPT Assistance**: Type in any pet emergency query and receive instant responses from ChatGPT.
 
