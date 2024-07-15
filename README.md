@@ -152,26 +152,26 @@ Start the browser (app):
 
 1. **Emergency Call Button**: Swipe right on the SOS button to initiate a call to the nearest veterinary clinic based on your current location. If the call fails, the app will automatically call the next closest clinic.
 
-![Home Page](src/assets/mockups/finished_prototype/HomePage.png)
+![Home Page](client/src/assets/mockups/finished_prototype/HomePage.png)
 
 2. **ChatGPT Assistance**: Type in any pet emergency query and receive instant responses from ChatGPT.
 
-![Home Page with chatgpt response](src/assets/mockups/finished_prototype/HomePage_with_chatgpt_response.png)
+![Home Page with chatgpt response](client/src/assets/mockups/finished_prototype/HomePage_with_chatgpt_response.png)
 
 
 ### Navigation page 
 
 1. **Real-Time Navigation**: Use the navigation button to get real-time directions from your current location.
 
-![Navigation Page](src/assets/mockups/finished_prototype/NavigationPage.png)
+![Navigation Page](client/src/assets/mockups/finished_prototype/NavigationPage.png)
 
 2. **Search Bar and Clinic Information**: Utilize the search bar with drop-down options to find clinics. After selecting a clinic, view its opening hours for better planning.
 
-![NavigationPage Clinic info](src/assets/mockups/finished_prototype/NavigationPage-clinic_info.png)
+![NavigationPage Clinic info](client/src/assets/mockups/finished_prototype/NavigationPage-clinic_info.png)
 
 3. **Directions to Clinic**: Get directions to the clinic. Clicking "More Options" will open the route in Google Maps for further navigation.
 
-![NavigationPage with direction](src/assets/mockups/finished_prototype/NavigationPage_with_direction.png)
+![NavigationPage with direction](client/src/assets/mockups/finished_prototype/NavigationPage_with_direction.png)
 
 ## Roadmap
 1. Initial Setup and Basic Layout
