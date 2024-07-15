@@ -1,0 +1,75 @@
+@use "../../styles/globals" as *;
+@use "../../styles/typography" as *;
+@use "../../styles/variables" as *;
+
+.swipe {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+
+  &-button {
+    margin-left: 0.8rem;
+    position: relatvie;
+    transform: translate(-50%);
+    width: 3.8rem;
+    height: 3.8rem;
+    background-color: #ff1c27;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 3;
+    transition: transform 0.1s;
+
+    .swipe-icon {
+      height: 1.5rem;
+      width: 2.5rem;
+    }
+  }
+  &-bar {
+    position: absolute;
+    width: auto;
+    height: 3rem;
+    background-color: $white;
+    border-radius: 10rem;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: $light-red;
+    z-index: 1;
+    padding-right: 2rem;
+  }
+  &-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: $red;
+    border-radius: 10rem;
+    z-index: 2;
+    transition: width 0.001s;
+  }
+  &-clinic-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $white;
+    margin: 0.5rem;
+    border-radius: 5px;
+    text-align: center;
+    z-index: 1;
+    padding: 0 1rem;
+
+    h3 {
+      width: 100%;
+      padding: 0 !important;
+    }
+  }
+}
+
+h2 {
+  margin-left: 6rem;
+  position: relative;
+  //   z-index: 2;
+}

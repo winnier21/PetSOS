@@ -1,0 +1,42 @@
+@use "../../styles/typography" as *;
+@use "../../styles/variables" as *;
+
+.pagetop {
+  width: 100%;
+  &-logo {
+    width: 5rem;
+    height: 5rem;
+  }
+  &-section {
+    margin: 1rem;
+    width: auto;
+    height: 12rem;
+    background-color: $blue;
+    border-radius: 0.5rem;
+
+    h1 {
+      color: $white;
+      padding-top: 1rem;
+    }
+    h3 {
+      color: $white;
+      margin-left: 0;
+      padding: 0.5rem;
+    }
+  }
+  &-container {
+    display: flex;
+    margin: 1rem 1.6rem;
+    align-items: center;
+    h3 {
+      color: $black;
+      text-align: left;
+      margin-left: 1rem;
+    }
+  }
+  &-vector {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-left: 0.5rem;
+  }
+}
