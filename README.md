@@ -156,23 +156,22 @@ Start the browser (app):
 
 2. **ChatGPT Assistance**: Type in any pet emergency query and receive instant responses from ChatGPT.
 
-![Home Page with chatgpt response](client/src/assets/mockups/finished_prototype/HomePage_with_chatgpt_response.png)
+![Home Page with chatgpt response](https://github.com/winnier21/PetSOS/blob/5cc027520a859fdf9d52f2560ad5721c9812d10b/client/src/assets/mockups/finished%20prototype/HomePage_with_chatgpt_response.png)
 
 
 ### Navigation page 
 
 1. **Real-Time Navigation**: Use the navigation button to get real-time directions from your current location.
 
-![Navigation Page](client/src/assets/mockups/finished_prototype/NavigationPage.png)
+![Navigation Page](https://github.com/winnier21/PetSOS/blob/5cc027520a859fdf9d52f2560ad5721c9812d10b/client/src/assets/mockups/finished%20prototype/NavigationPage.png)
 
 2. **Search Bar and Clinic Information**: Utilize the search bar with drop-down options to find clinics. After selecting a clinic, view its opening hours for better planning.
 
-![NavigationPage Clinic info](client/src/assets/mockups/finished_prototype/NavigationPage-clinic_info.png)
+![NavigationPage Clinic info](https://github.com/winnier21/PetSOS/blob/5cc027520a859fdf9d52f2560ad5721c9812d10b/client/src/assets/mockups/finished%20prototype/NavigationPage-clinic_info.png)
 
 3. **Directions to Clinic**: Get directions to the clinic. Clicking "More Options" will open the route in Google Maps for further navigation.
 
-![NavigationPage with direction](client/src/assets/mockups/finished_prototype/NavigationPage_with_direction.png)
-
+![NavigationPage with direction](https://github.com/winnier21/PetSOS/blob/5cc027520a859fdf9d52f2560ad5721c9812d10b/client/src/assets/mockups/finished%20prototype/NavigationPage_with_direction.png)
 ## Roadmap
 1. Initial Setup and Basic Layout
 2. API Integration and UI Development
