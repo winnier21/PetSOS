@@ -75,7 +75,7 @@ PetSOS aims to bridge the knowledge gap that exists in pet emergency first aid. 
 * [![React Native][React.js]][React-url]
 * [![Node.js][Node.js]][Node-url]
 * [![Express.js][Express.js]][Express-url]
-* [![Google Maps API][GoogleMaps]][GoogleMaps-url]
+* [![Google Places API][GooglePlaces]][GooglePlaces-url]
 * [![Twilio API][Twilio]][Twilio-url]
 * [![OpenAI][OpenAI]][OpenAI-url]
 
